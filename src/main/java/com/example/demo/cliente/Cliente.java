@@ -8,7 +8,7 @@ import org.hibernate.validator.constraints.br.CPF;
 
 import com.example.demo.base.BaseEntity;
 import com.example.demo.email.Email;
-import com.example.telefone.Telefone;
+import com.example.demo.telefone.Telefone;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;

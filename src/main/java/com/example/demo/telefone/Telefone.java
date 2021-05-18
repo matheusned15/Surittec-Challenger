@@ -1,4 +1,4 @@
-package com.example.telefone;
+package com.example.demo.telefone;
 
 import com.example.demo.base.BaseEntity;
 import com.example.demo.cliente.Cliente;
@@ -21,21 +21,21 @@ import javax.validation.constraints.NotNull;
 @EqualsAndHashCode(callSuper = true)
 public class Telefone extends BaseEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
-	@NotBlank
-	@Column(name = "NUMERO")
-	private String numero;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-	@NotNull
-	@Column(name = "TIPO")
-	@Enumerated(EnumType.STRING)
-	private TipoTelefone tipoTelefone;
+    @NotBlank
+    @Column(name = "NUMERO")
+    private String numero;
 
-	@ManyToOne
-	@JsonIgnore
-	@JoinColumn(name = "CLIENTE_ID")
-	private Cliente cliente;
+    @NotNull
+    @Column(name = "TIPO")
+    @Enumerated(EnumType.STRING)
+    private TipoTelefone tipoTelefone;
+
+    @ManyToOne
+    @JsonIgnore
+    @JoinColumn(name = "CLIENTE_ID")
+    private Cliente cliente;
 }

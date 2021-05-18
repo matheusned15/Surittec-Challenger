@@ -1,5 +1,6 @@
-package com.example.telefone;
+package com.example.demo.telefone;
 
+import com.example.demo.telefone.Telefone;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TelefoneRepository extends JpaRepository<Telefone, Long> {
