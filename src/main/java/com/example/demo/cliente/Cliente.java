@@ -12,6 +12,7 @@ import com.example.telefone.Telefone;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
@@ -42,13 +43,19 @@ public class Cliente extends BaseEntity {
 	private String bairro;
 
 	@NotBlank
+	private String cidade;
+
+	@NotBlank
 	private String localidade;
 
+	@NotBlank
+	private String uf;
+
 	@Valid
-	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Telefone> telefones;
 
 	@Valid
-	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Email> emails;
 }

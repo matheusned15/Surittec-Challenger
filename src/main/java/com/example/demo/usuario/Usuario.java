@@ -18,6 +18,10 @@ import com.example.demo.base.BaseEntity;
 @EqualsAndHashCode(callSuper = true)
 public class Usuario extends BaseEntity {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
 	@NotBlank
 	private String login;
 

@@ -36,7 +36,7 @@ public class ClienteService {
 	public ResponseEntity<Cliente> atualiza(Long clienteId, Cliente cliente) {
 		Optional<Cliente> buscaCliente = clienteRepository.findById(clienteId);
 		if (buscaCliente.isPresent()) {
-			BeanUtils.copyProperties(cliente, buscaCliente.get(), "codigo");
+			BeanUtils.copyProperties(cliente, buscaCliente.get(), "clienteId");
 			Cliente salva = clienteRepository.save(buscaCliente.get());
 			return ResponseEntity.ok(salva);
 

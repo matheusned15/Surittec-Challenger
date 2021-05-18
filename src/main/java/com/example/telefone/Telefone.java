@@ -17,9 +17,14 @@ import javax.validation.constraints.NotNull;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "TELEFONE")
 @EqualsAndHashCode(callSuper = true)
 public class Telefone extends BaseEntity {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	
 	@NotBlank
 	@Column(name = "NUMERO")
 	private String numero;
