@@ -44,15 +44,6 @@ public class Cliente extends BaseEntity {
 	@NotBlank
 	private String localidade;
 
-	@NotBlank
-	private String uf;
-
-	private String unidade;
-
-	private String ibge;
-
-	private String complemento;
-
 	@Valid
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Telefone> telefones;
